@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+	<title>Responsive Page with Sidebar</title>
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.container {
+			display: flex;
+		}
+
+		.sidebar {
+			width: 20%;
+			background-color: #f1f1f1;
+			padding: 20px;
+		}
+
+		.main-content {
+			flex: 1;
+			padding: 20px;
+		}
+
+		.content-item {
+			border: 1px solid #ddd;
+			margin-bottom: 20px;
+			padding: 10px;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			/* Stack content in a column on small screens */
+		}
+
+		.sidebar label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		.content-item img {
+			width: 300px;
+			/* Set maximum width for the image */
+			height: auto;
+			display: block;
+			margin-right: 0;
+			/* Remove margin for small screens */
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+		}
+
+		.content-item .text {
+			flex: 1;
+			margin-top: 10px;
+			/* Add space between image and text on small screens */
+		}
+
+		.content-item h3,
+		.content-item p {
+			margin: 0;
+		}
+
+		@media only screen and (min-width: 769px) {
+			.content-item {
+				flex-direction: row;
+				/* Display content side by side on larger screens */
+			}
+
+			.content-item img {
+				margin-right: 10px;
+			}
+
+			.content-item .text {
+				margin-top: 0;
+			}
+		}
+
+		@media only screen and (max-width:769px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.sidebar {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="sidebar">
+			<h2>Filter</h2>
+			<label><input type="checkbox" name="all" value="all" checked> All</label>
+			<label><input type="checkbox" name="filter" value="category1"> Category 1</label>
+			<label><input type="checkbox" name="filter" value="category2"> Category 2</label>
+			<!-- Add more radio buttons as needed -->
+		</div>
+
+		<div class="main-content">
+			<div class="content-item">
+				<img src="images/charless.jpg" alt="Content Image">
+				<div class="text">
+					<h3>Content Title 1</h3>
+					<p>Found in: Places 1, Places 2</p>
+					<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+			</div>
+
+			<div class="content-item">
+				<img src="images/pragu1.jpg" alt="Content Image">
+				<div class="text">
+					<h3>Content Title 2</h3>
+					<p>Found in: Places 3, Places 4</p>
+
+					<p>Description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquam facilis, harum ducimus quis labore eum possimus officia quam, et non id dolores accusamus, repudiandae molestias rem nemo deserunt earum.</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+
+</html>

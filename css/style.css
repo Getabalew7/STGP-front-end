@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	/* font-family: 'Arial', sans-serif; */
+	font-family: 'Open Sans', sans-serif;
 }
 
 .nav-bar {
@@ -165,3 +165,78 @@ body {
 }
 
 /* ... (remaining styles) */
+
+.sidebar {
+	width: 20%;
+	background-color: #f1f1f1;
+	padding: 20px;
+}
+
+.main-content {
+	flex: 1;
+	padding: 20px;
+}
+
+.content-item {
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	padding: 10px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* Stack content in a column on small screens */
+}
+
+.sidebar label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.content-item img {
+	width: 300px;
+	/* Set maximum width for the image */
+	height: auto;
+	display: block;
+	margin-right: 0;
+	/* Remove margin for small screens */
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-item .text {
+	flex: 1;
+	margin-top: 10px;
+	/* Add space between image and text on small screens */
+}
+
+.content-item h3,
+.content-item p {
+	margin: 0;
+}
+
+@media only screen and (min-width: 769px) {
+	.content-item {
+		flex-direction: row;
+		align-items:flex-start;
+		/* Display content side by side on larger screens */
+	}
+
+	.content-item img {
+		margin-right: 10px;
+	}
+
+	.content-item .text {
+		margin-top: 0;
+	}
+}
+
+@media only screen and (max-width:769px) {
+	.container {
+		flex-direction: column;
+	}
+
+	.sidebar {
+		width: 100%;
+	}
+}

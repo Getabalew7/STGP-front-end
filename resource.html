@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		integrity="sha512-hfhPcrfga71+rK3ip1Dn6J4n9saGw+x4tNxO86FfG2deX/sLmIOg03Dn+CXCxBp6bNbY9Q14zcRPq3uoG33U3A=="
+		crossorigin="anonymous" />
+
+	<link rel="stylesheet" href="css/style.css">
+	<title>Responsive Navigation Bar</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f4f4f4;
+		}
+
+
+
+		/* Add additional styling as needed */
+	</style>
+</head>
+
+<body>
+	<div class="alert alert-info">
+		<p>!!! This is just a students project for study purposes only !!!</p>
+	</div>
+	<br />
+	</div>
+	<nav class="nav-bar">
+		<a href="index.html" class="navbar-brand">Prague</a>
+		<div class="navbar-toggle" id="navbarToggle">&#9776;</div>
+		<ul class="navbar-nav" id="navbarNav">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="index.html">Trending</a></li>
+			<li><a href="explore.html">Explore</a></li>
+			<li><a href="suggest.html">Suggest</a></li>
+			<li><a href="resource.html">Usefull Resource</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+	<div>
+		<header>
+			<h1>Frequently Asked Questions</h1>
+		</header>
+
+		<section class="faq-container">
+			<article class="faq-item">
+				<h2 class="question" onclick="toggleAnswer(this)">What is Lorem Ipsum? <span
+						class="arrow">&#9650;</span>
+				</h2>
+				<p class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			</article>
+
+			<article class="faq-item">
+				<h2 class="question" onclick="toggleAnswer(this)">Why use Lorem Ipsum? <span
+						class="arrow">&#9660;</span>
+				</h2>
+				<p class="answer hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, odio.
+					Molestias voluptates ut reprehenderit tenetur, rerum quia laboriosam iusto in saepe molestiae nisi,
+					nulla perspiciatis explicabo nihil adipisci deleniti facere?
+				</p>
+			</article>
+
+			<!-- Add more FAQ items as needed -->
+
+		</section>
+
+	</div>
+
+	<footer class="footer">
+		<p>&copy; 2023 Your Website Name. All rights reserved.</p>
+	</footer>
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>

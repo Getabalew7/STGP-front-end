@@ -4,129 +4,109 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-	<title>Responsive Page with Sidebar</title>
+	<link rel="stylesheet" href="styles.css">
+	<title>FAQ Page</title>
 	<style>
 		body {
-			font-family: 'Open Sans', sans-serif;
+			font-family: Arial, sans-serif;
 			margin: 0;
 			padding: 0;
-			box-sizing: border-box;
+			background-color: #f4f4f4;
 		}
 
-		.container {
-			display: flex;
+		header {
+			background-color: #333;
+			color: #fff;
+			text-align: center;
+			padding: 20px 0;
 		}
 
-		.sidebar {
-			width: 20%;
-			background-color: #f1f1f1;
-			padding: 20px;
+		.faq-container {
+			max-width: 800px;
+			margin: 20px auto;
 		}
 
-		.main-content {
-			flex: 1;
-			padding: 20px;
-		}
-
-		.content-item {
+		.faq-item {
 			border: 1px solid #ddd;
-			margin-bottom: 20px;
-			padding: 10px;
-			overflow: hidden;
-			display: flex;
-			flex-direction: column;
-			/* Stack content in a column on small screens */
-		}
-
-		.sidebar label {
-			display: block;
 			margin-bottom: 10px;
-		}
-
-		.content-item img {
-			width: 300px;
-			/* Set maximum width for the image */
-			height: auto;
-			display: block;
-			margin-right: 0;
-			/* Remove margin for small screens */
+			padding: 15px;
+			background-color: #fff;
 			border-radius: 5px;
-			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 		}
 
-		.content-item .text {
-			flex: 1;
-			margin-top: 10px;
-			/* Add space between image and text on small screens */
+		.question {
+			color: #333;
+			margin-bottom: 10px;
+			cursor: pointer;
 		}
 
-		.content-item h3,
-		.content-item p {
-			margin: 0;
+		.answer {
+			color: #666;
 		}
 
-		@media only screen and (min-width: 769px) {
-			.content-item {
-				flex-direction: row;
-				/* Display content side by side on larger screens */
-			}
-
-			.content-item img {
-				margin-right: 10px;
-			}
-
-			.content-item .text {
-				margin-top: 0;
-			}
+		.arrow {
+			float: right;
 		}
 
-		@media only screen and (max-width:769px) {
-			.container {
-				flex-direction: column;
-			}
-
-			.sidebar {
-				width: 100%;
-			}
+		.hidden {
+			display: none;
 		}
+
+		/* Add additional styling as needed */
 	</style>
 </head>
 
 <body>
 
-	<div class="container">
-		<div class="sidebar">
-			<h2>Filter</h2>
-			<label><input type="checkbox" name="all" value="all" checked> All</label>
-			<label><input type="checkbox" name="filter" value="category1"> Category 1</label>
-			<label><input type="checkbox" name="filter" value="category2"> Category 2</label>
-			<!-- Add more radio buttons as needed -->
-		</div>
+	<header>
+		<h1>Frequently Asked Questions</h1>
+	</header>
 
-		<div class="main-content">
-			<div class="content-item">
-				<img src="images/charless.jpg" alt="Content Image">
-				<div class="text">
-					<h3>Content Title 1</h3>
-					<p>Found in: Places 1, Places 2</p>
-					<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-				</div>
-			</div>
+	<section class="faq-container">
+		<article class="faq-item">
+			<h2 class="question" onclick="toggleAnswer(this)">What is Lorem Ipsum? <span class="arrow">&#9650;</span>
+			</h2>
+			<p class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		</article>
 
-			<div class="content-item">
-				<img src="images/pragu1.jpg" alt="Content Image">
-				<div class="text">
-					<h3>Content Title 2</h3>
-					<p>Found in: Places 3, Places 4</p>
+		<article class="faq-item">
+			<h2 class="question" onclick="toggleAnswer(this)">Why use Lorem Ipsum? <span class="arrow">&#9660;</span>
+			</h2>
+			<p class="answer hidden">Lorem Ipsum is a standard dummy text used when the actual text is not available.
+			</p>
+		</article>
 
-					<p>Description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquam facilis, harum ducimus quis labore eum possimus officia quam, et non id dolores accusamus, repudiandae molestias rem nemo deserunt earum.</p>
-				</div>
-			</div>
+		<!-- Add more FAQ items as needed -->
 
-		</div>
-	</div>
+	</section>
+	<script>
+		// Ensure the first answer is visible by default
+		document.addEventListener("DOMContentLoaded", function () {
+			const defaultAnswer = document.querySelector('.faq-item .answer');
+			defaultAnswer.classList.remove('hidden');
+		});
 
+		function toggleAnswer(question) {
+			// Hide all answers
+			const allAnswers = document.querySelectorAll('.faq-item .answer');
+			allAnswers.forEach(answer => answer.classList.add('hidden'));
+
+			// Show the clicked answer
+			const answer = question.nextElementSibling;
+			answer.classList.remove('hidden');
+
+			// Update arrow icons for all questions
+			const allArrows = document.querySelectorAll('.faq-item .arrow');
+			allArrows.forEach(arrow => arrow.textContent = '\u25BC');
+
+			// Update the clicked question's arrow
+			const arrow = question.querySelector('.arrow');
+			arrow.textContent = answer.classList.contains('hidden') ? '\u25BC' : '\u25B2';
+		}
+
+
+	</script>
+	<script src="script.js"></script>
 </body>
 
 </html>

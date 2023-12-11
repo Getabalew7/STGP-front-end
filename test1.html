@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+	<title>Document</title>
+</head>
+<style>
+	.content-box-container {
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+
+	.content-box {
+		display: flex;
+		width: 800px;
+		box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+		background-color: #ffffff;
+		padding: 20px;
+		margin: 15px;
+		cursor: pointer;
+	}
+
+	.profile-img {
+		width: 300px;
+		height: auto;
+		overflow: hidden;
+		margin-right: 10px;
+	}
+
+	.profile-img img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.content-profile {
+		display: flex;
+
+	}
+
+	.name-user {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.name-user strong {
+		color: #3d3d3d;
+
+	}
+
+	.name-user span {
+		color: #979797;
+
+	}
+
+	.reviews {
+		color: #f9d71c;
+	}
+
+
+
+	.content-content p {
+
+		color: #4b4b4b;
+	}
+
+	.content-box:hover {
+		transform: translateY(-10px);
+		transition: all ease 0.3s;
+	}
+
+	.title-rating {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@media(max-width:1060px) {
+		.testimonial-box {
+			width: 45%;
+			padding: 10px;
+			display: block;
+		}
+	}
+
+	@media(max-width:790px) {
+		.testimonial-box {
+			width: 100%;
+		}
+
+		.testimonial-heading h1 {
+
+		}
+	}
+
+	@media(max-width:340px) {
+		.box-top {
+			flex-wrap: wrap;
+			margin-bottom: 10px;
+		}
+
+		.reviews {
+			margin-top: 10px;
+		}
+	}
+</style>
+
+<body>
+	<div class="content-box-container">
+		<div class="content-box">
+				<div class="content-profile">
+					<!--img---->
+					<div class="profile-img">
+						<img src="images/pragu1.jpg" />
+					</div>
+				</div>
+
+
+			<div class="content-content">
+				<div class="title-rating">
+					<div class="name-user">
+						<strong>Touseeq Ijaz</strong>
+						<span>@touseeqijazweb</span>
+					</div>
+					<div class="reviews">
+						<p class="rating">Rating: <span class="anonymous-user-rating"><i
+									class="glyphicon glyphicon-star"></i>
+								<i class="glyphicon glyphicon-star"></i>
+								<i class="glyphicon glyphicon-star"></i>
+								<i class="glyphicon glyphicon-star"></i>
+								<i class="glyphicon glyphicon-star"></i>
+								5.0</span> </p>
+					</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident
+					temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur
+					voluptates incidunt blanditiis sed atque cumque.</p>
+			</div>
+		</div>
+		<div class="testimonial-box">
+			<!--top------------------------->
+			<div class="box-top">
+				<!--profile----->
+				<div class="profile">
+					<!--img---->
+					<div class="profile-img">
+						<img src="images/pragu1.jpg" />
+					</div>
+				</div>
+			</div>
+			<!--Comments---------------------------------------->
+
+			<div class="client-comment">
+				<div class="title-rating">
+					<div class="name-user">
+						<strong>Touseeq Ijaz</strong>
+						<span>@touseeqijazweb</span>
+					</div>
+					<div class="reviews">
+						<p class="rating">Rating: <span class="anonymous-user-rating"><i
+									class="glyphicon glyphicon-star"></i>
+								<i class="glyphicon glyphicon-star"></i>
+								<i class="glyphicon glyphicon-star"></i>
+								<i class="glyphicon glyphicon-star"></i>
+								<i class="glyphicon glyphicon-star"></i>
+								5.0</span> </p>
+					</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident
+					temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur
+					voluptates incidunt blanditiis sed atque cumque.</p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

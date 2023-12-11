@@ -1,112 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles.css">
-	<title>FAQ Page</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			background-color: #f4f4f4;
-		}
-
-		header {
-			background-color: #333;
-			color: #fff;
-			text-align: center;
-			padding: 20px 0;
-		}
-
-		.faq-container {
-			max-width: 800px;
-			margin: 20px auto;
-		}
-
-		.faq-item {
-			border: 1px solid #ddd;
-			margin-bottom: 10px;
-			padding: 15px;
-			background-color: #fff;
-			border-radius: 5px;
-		}
-
-		.question {
-			color: #333;
-			margin-bottom: 10px;
-			cursor: pointer;
-		}
-
-		.answer {
-			color: #666;
-		}
-
-		.arrow {
-			float: right;
-		}
-
-		.hidden {
-			display: none;
-		}
-
-		/* Add additional styling as needed */
-	</style>
-</head>
-
-<body>
-
-	<header>
-		<h1>Frequently Asked Questions</h1>
-	</header>
-
-	<section class="faq-container">
-		<article class="faq-item">
-			<h2 class="question" onclick="toggleAnswer(this)">What is Lorem Ipsum? <span class="arrow">&#9650;</span>
-			</h2>
-			<p class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-		</article>
-
-		<article class="faq-item">
-			<h2 class="question" onclick="toggleAnswer(this)">Why use Lorem Ipsum? <span class="arrow">&#9660;</span>
-			</h2>
-			<p class="answer hidden">Lorem Ipsum is a standard dummy text used when the actual text is not available.
-			</p>
-		</article>
-
-		<!-- Add more FAQ items as needed -->
-
-	</section>
-	<script>
-		// Ensure the first answer is visible by default
-		document.addEventListener("DOMContentLoaded", function () {
-			const defaultAnswer = document.querySelector('.faq-item .answer');
-			defaultAnswer.classList.remove('hidden');
-		});
-
-		function toggleAnswer(question) {
-			// Hide all answers
-			const allAnswers = document.querySelectorAll('.faq-item .answer');
-			allAnswers.forEach(answer => answer.classList.add('hidden'));
-
-			// Show the clicked answer
-			const answer = question.nextElementSibling;
-			answer.classList.remove('hidden');
-
-			// Update arrow icons for all questions
-			const allArrows = document.querySelectorAll('.faq-item .arrow');
-			allArrows.forEach(arrow => arrow.textContent = '\u25BC');
-
-			// Update the clicked question's arrow
-			const arrow = question.querySelector('.arrow');
-			arrow.textContent = answer.classList.contains('hidden') ? '\u25BC' : '\u25B2';
-		}
-
-
-	</script>
-	<script src="script.js"></script>
-</body>
-
-</html>
+  <!--doctype html-->
+  <html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<title>Testimonial HTML</title>
+	<!--Stylesheet--------------------------->
+	<link rel="stylesheet" href="style.css"/>
+	<!--Fav-icon------------------------------>
+	<link rel="shortcut icon" href="images/fav-icon.png"/>
+	<!--poppins-font-family------------------->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<!--using-Font-Awesome-------------------->
+	<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<!--Testimonials------------------->
+		<section id="testimonials">
+			<!--heading--->
+			<div class="testimonial-heading">
+				<span>Comments</span>
+				<h1>Clients Says</h1>
+			</div>
+			<!--testimonials-box-container------>
+			<div class="testimonial-box-container">
+				<!--BOX-1-------------->
+				<div class="testimonial-box">
+					<!--top------------------------->
+					<div class="box-top">
+						<!--profile----->
+						<div class="profile">
+							<!--img---->
+							<div class="profile-img">
+								<img src="images/c-1.jpg" />
+							</div>
+							<!--name-and-username-->
+							<div class="name-user">
+								<strong>Touseeq Ijaz</strong>
+								<span>@touseeqijazweb</span>
+							</div>
+						</div>
+						<!--reviews------>
+						<div class="reviews">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="far fa-star"></i><!--Empty star-->
+						</div>
+					</div>
+					<!--Comments---------------------------------------->
+					<div class="client-comment">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+					</div>
+				</div>
+				<!--BOX-2-------------->
+				<div class="testimonial-box">
+					<!--top------------------------->
+					<div class="box-top">
+						<!--profile----->
+						<div class="profile">
+							<!--img---->
+							<div class="profile-img">
+								<img src="images/c-2.jpg" />
+							</div>
+							<!--name-and-username-->
+							<div class="name-user">
+								<strong>J.K Rowling</strong>
+								<span>@jkrowling</span>
+							</div>
+						</div>
+						<!--reviews------>
+						<div class="reviews">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i><!--Empty star-->
+						</div>
+					</div>
+					<!--Comments---------------------------------------->
+					<div class="client-comment">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+					</div>
+				</div>
+				<!--BOX-3-------------->
+				<div class="testimonial-box">
+					<!--top------------------------->
+					<div class="box-top">
+						<!--profile----->
+						<div class="profile">
+							<!--img---->
+							<div class="profile-img">
+								<img src="images/c-3.jpg" />
+							</div>
+							<!--name-and-username-->
+							<div class="name-user">
+								<strong>Harry Potter</strong>
+								<span>@DanielRedclief</span>
+							</div>
+						</div>
+						<!--reviews------>
+						<div class="reviews">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="far fa-star"></i><!--Empty star-->
+						</div>
+					</div>
+					<!--Comments---------------------------------------->
+					<div class="client-comment">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+					</div>
+				</div>
+				<!--BOX-4-------------->
+				<div class="testimonial-box">
+					<!--top------------------------->
+					<div class="box-top">
+						<!--profile----->
+						<div class="profile">
+							<!--img---->
+							<div class="profile-img">
+								<img src="images/c-4.jpg" />
+							</div>
+							<!--name-and-username-->
+							<div class="name-user">
+								<strong>Oliva</strong>
+								<span>@Olivaadward</span>
+							</div>
+						</div>
+						<!--reviews------>
+						<div class="reviews">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="far fa-star"></i><!--Empty star-->
+						</div>
+					</div>
+					<!--Comments---------------------------------------->
+					<div class="client-comment">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+	</html>

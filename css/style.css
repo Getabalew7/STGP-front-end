@@ -48,6 +48,7 @@ body {
 }
 
 .alert {
+	width: 100%;
 	padding: 10px;
 	margin-bottom: 5px;
 	border: 1px solid transparent;
@@ -89,7 +90,7 @@ body {
 }
 
 .quick-meal {
-	margin: 15px;
+	margin: 5px;
 	max-width: 250px;
 	box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
 	background-color: #ffffff;
@@ -108,7 +109,7 @@ body {
 }
 
 .meal-details {
-	padding: 15px;
+	padding: 10px;
 }
 
 .meal-details .description {
@@ -116,6 +117,7 @@ body {
 }
 
 .rating i {
+	padding-top: 5px;
 	color: #f9d71c;
 }
 
@@ -411,6 +413,17 @@ header {
 .title-rating {
 	display: flex;
 	justify-content: space-between;
+}
+
+.person .member {
+	text-align: center;
+}
+
+.member img {
+	display: block;
+	margin: auto;
+	width: 200px;
+	height: 200px;
 }
 
 @media (max-width: 768px) {

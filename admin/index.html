@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STGP-prague Admin login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .card {
+      margin-top: 100px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+      color: #333;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .form-control {
+      border-radius: 20px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      border-radius: 20px;
+    }
+
+    .error-message {
+      display: none;
+      color: #ff0000;
+      /* Red color for error message */
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+      padding: 5px;
+      border: 1px solid #ff0000;
+      border-radius: 5px;
+      background-color: #ffe6e6;
+      /* Light red background */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card p-4">
+          <h2 id="form-title" class="card-title text-center mb-4">Welcome Back Admin!</h2>
+          <form>
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="email" aria-label="email"
+                aria-describedby="email-desc" required>
+            </div>
+            <div class="form-group">
+              <input type="password" id="password" class="form-control" placeholder="Password" aria-label="Password"
+                aria-describedby="password-desc" required>
+            </div>
+            <div class="form-group text-right">
+              <a href="#" class="push-right">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Login</button>
+            <div id="error-message" class="error-message"></div> <!-- Error message container -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'login.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            if (xhr.responseText === 'success') {
+              // Redirect to dashboard or perform necessary actions
+              window.location = "suggestion.php"
+            } else {
+              document.getElementById('error-message').style.display = 'block'; // Show error message
+              document.getElementById('error-message').innerText = 'Invalid Email or Password!';
+            }
+          }
+        }
+      };
+
+      var data = 'email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password);
+      xhr.send(data);
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
